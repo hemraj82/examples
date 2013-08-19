@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<package name="default" namespace="/" extends="struts-default">
+		<result-types>
+			<result-type name="captcha" class="CaptchaResultType" />
+		</result-types>
+		<action name="submitform" class="MyAction">
+			<result name="success">result.jsp</result>
+			<result name="input">index.jsp</result>
+		</action>
+		<action name="GetCaptchaImage">
+			<result type="captcha">
+			</result>
+		</action>
+	</package>
+</struts>
